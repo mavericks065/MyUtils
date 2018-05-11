@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+
+# Safety measures
+set -o errexit   # Leave immediately if a command returns an error
+set -o nounset   # Leave immediately if an unitialized value is used
+set -euo pipefail  # Leave immediately if a command fails in a pipe
+
 WHERE_AM_I=$(pwd)/src
 
 if cat ~/.zshrc | grep -q GOPATH ; then
