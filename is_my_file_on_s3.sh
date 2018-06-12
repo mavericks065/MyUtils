@@ -28,6 +28,8 @@ for T in $TABLES; do
     elif [ $R2 \> 0 ]; then
          echo "file $T is present :"
          echo "$R2 times"
+    else
+        echo "file $T not found"
     fi
     lower_case_table=$(echo $T | tr '[:upper:]' '[:lower:]')
 
@@ -40,5 +42,7 @@ for T in $TABLES; do
     elif [ $r2 \> 0 ]; then
          echo "file $lower_case_table is present :"
          echo "$r2 times"
+    else
+        echo "file $lower_case_table not found"
     fi
 done
